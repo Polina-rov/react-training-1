@@ -1,8 +1,11 @@
-# React + Vite
+# React training
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Перед вами сверстанная страничка каталога продуктов
 
-Currently, two official plugins are available:
+## Задача:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- При нажатии на кнопку корзины в панели навигации должна открываться панель с корзиной (компонент `Cart`)
+- При нажатии на продукт он должен добавляться в корзину
+- При нажатии на кнопку `Remove` у продукта в корзине, продукт должен удаляться из нее
+
+Продукте в каталоге и корзине приведены для примера
