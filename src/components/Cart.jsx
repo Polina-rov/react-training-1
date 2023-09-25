@@ -2,7 +2,13 @@ import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
-export default function Cart({ open, onClick, onClickClose, productsCart }) {
+export default function Cart({
+  open,
+  onClick,
+  onClickClose,
+  productsCart,
+  onRemove,
+}) {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={() => {}}>
@@ -56,7 +62,7 @@ export default function Cart({ open, onClick, onClickClose, productsCart }) {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {productsCart.map((product) => (
+                            {productsCart.map((product,index) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
@@ -87,6 +93,7 @@ export default function Cart({ open, onClick, onClickClose, productsCart }) {
 
                                     <div className="flex">
                                       <button
+                                        onClick={() => onRemove(index)}
                                         type="button"
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
                                       >

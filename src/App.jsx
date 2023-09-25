@@ -94,6 +94,11 @@ function App() {
     const copy = [products[index], ...productsCart];
     setProductsCart(copy);
   }
+  function handleRemoveProduct(index) {
+    const copy = [...productsCart];
+    copy.splice(index, 1);
+    setProductsCart(copy);
+  }
 
   function handleOpenCart() {
     setOpenCart(true);
@@ -105,6 +110,7 @@ function App() {
   return (
     <>
       <Cart
+        onRemove={handleRemoveProduct}
         onClick={handleOpenCart}
         open={openCart}
         onClickClose={handleCloseCart}
